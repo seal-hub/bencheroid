@@ -9,7 +9,7 @@
 	* Activity, Service, Receiver
 * Android Callbacks
 	* LifeCycle (onCreate, onStart, ..., onDestroy), EventListener (onClick, onLocationChanged, etc.	)
-* Inter-Component Communication
+* Inter-Component Communication (ICC)
 	* 	Yes/No
 
 ### Internal
@@ -18,7 +18,7 @@
 
 
 ## Benchmark App Info
-The locations of event races are represented as *[Event1, Event2, Field]* where Event1 and Event2 are defined as *FileName (Line Number)*.
+The locations of event races are represented as *[Event1, Event2, Field]* where Event1 and Event2 are defined as *FileName (Line Number)*. The more detailed list can be found in [this google sheet](https://docs.google.com/spreadsheets/d/1dj9SPCKxUDIGwRgBsUjtdBfitT8pcvSm8HbscgZeQTA/edit?usp=sharing).
 
 |Id|Name| Concurrency API | Synchronization Mechanism | Involved Components | Android Callbacks | ICC | Internal Entities | #ER | ER Location(s)|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -52,4 +52,3 @@ The locations of event races are represented as *[Event1, Event2, Field]* where 
 |28|TimerTask2|Timer|withDelay|Activity|&empty;|&#10060;|Time|1|[MainActivity.java(27), MainActivity.java(37), A]|
 |29|Thread1|Thread|wait/notify|Activity|&empty;|&#10060;|Thread|1|[MainActivity.java(32), MainActivity.java(25), secondMemoryObject]|
 |30|Thread2|Thread|wait/notify|Activity|&empty;|&#10060;|&empty;|1|[MainActivity.java(32), MainActivity.java(46), secondMemoryObject]|
-
