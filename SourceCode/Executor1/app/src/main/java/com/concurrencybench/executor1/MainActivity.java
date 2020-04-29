@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(coordinates.split(",")[0] + "  " + coordinates.split(",")[1]);
+                    System.out.println(coordinates.split(",")[0] + "  ");
                 }
             }
         });

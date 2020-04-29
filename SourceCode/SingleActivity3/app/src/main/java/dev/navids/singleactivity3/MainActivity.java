@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                memoryObject.toString();
+                if(memoryObject != null)
+                    memoryObject.toString();
             }
         });
         new Handler(handlerThread.getLooper()).post(new Runnable() {

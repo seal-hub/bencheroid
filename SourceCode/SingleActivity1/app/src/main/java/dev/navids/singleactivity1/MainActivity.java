@@ -7,6 +7,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     Object memoryObject = new Object();
+    Object secondMemoryObject = new Object();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickFree(View view){
         memoryObject = null;
+        secondMemoryObject.toString();
+    }
+
+    public void wihtoutListener(){
+        secondMemoryObject = null;
     }
 }

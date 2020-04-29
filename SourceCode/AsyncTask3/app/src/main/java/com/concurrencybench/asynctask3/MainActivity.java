@@ -21,9 +21,14 @@ public class MainActivity extends Activity {
     }
 
 
-    public void onClick(View view) {
+    @Override
+    protected void onResume() {
+        super.onResume();
         new CoordinatesTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "READ");
         new CoordinatesTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "WRITE");
+    }
+
+    public void onClick(View view) {
     }
 
 
@@ -41,8 +46,7 @@ public class MainActivity extends Activity {
         protected String doInBackground(String... params) {
             if (params[0].equals("READ")) {
                 String latDiff = String.valueOf(Double.valueOf(coordinates.split(",")[0]) - Double.valueOf(params[0].split(",")[0]));
-                String longDiff = String.valueOf(Double.valueOf(coordinates.split(",")[1]) - Double.valueOf(params[0].split(",")[1]));
-                return "Coordinates diff: " + latDiff + ", " + longDiff + "\n";
+                return "Coordinates diff: " + latDiff + "\n";
             } else {
                 coordinates = null;
                 return "Done";

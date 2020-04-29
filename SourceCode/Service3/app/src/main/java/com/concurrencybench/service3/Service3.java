@@ -23,11 +23,7 @@ public class Service3 extends IntentService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        showText(mCoordinates);
-    }
-
-    private void showText(String text) {
-        System.out.println("Coordinates: " + text.split(",")[0] + ", " + text.split(",")[1] + "\n");
+        System.out.println("Coordinates: " + mCoordinates.split(",")[0] + "\n");
     }
 
 

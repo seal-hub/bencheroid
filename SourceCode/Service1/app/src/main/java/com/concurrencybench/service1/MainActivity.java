@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         if (mBound) {
             Toast.makeText(this, "lat: " + coordinates.split(",")[0] + "  " +
-                    "lang: " + coordinates.split(",")[1], Toast.LENGTH_SHORT).show();
+                    "lang: ", Toast.LENGTH_SHORT).show();
         }
     }
 

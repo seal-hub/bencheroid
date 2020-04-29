@@ -24,16 +24,12 @@ public class Service4 extends IntentService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            showText(mCoordinates);
+            System.out.println("Coordinates: " + mCoordinates.split(",")[0] + "\n");
         } else if(msg.equals("Write")){
             System.out.println("write");
             mCoordinates = null;
         }
 
-    }
-
-    private void showText(String text) {
-        System.out.println("Coordinates: " + text.split(",")[0] + ", " + text.split(",")[1] + "\n");
     }
 
 

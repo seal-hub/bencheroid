@@ -25,7 +25,6 @@ public class MainActivity extends Activity {
             public void handleMessage(Message msg) {
                 if(msg.what == 0){
                     String latDiff = String.valueOf(Double.valueOf(coordinates.split(",")[0]) - Double.valueOf(msg.obj.toString().split(",")[0]));
-                    String longDiff = String.valueOf(Double.valueOf(coordinates.split(",")[1]) - Double.valueOf(msg.obj.toString().split(",")[1]));
                 }else if(msg.what == 1){
                     coordinates = null;
                 }
@@ -33,17 +32,22 @@ public class MainActivity extends Activity {
         };
     }
 
-    public void onClick(View view) {
+    @Override
+    protected void onResume() {
+        super.onResume();
         coordinates = getCurrentCoordinates();
 
         Message readMsg = new Message();
         readMsg.what = 0; // 0 for Read
         readMsg.obj = getCurrentCoordinates();
-        handler.dispatchMessage(readMsg);
+        handler.sendMessage(readMsg);
 
         Message writeMsg = new Message();
         writeMsg.what = 1; // 1 for Write
-        handler.dispatchMessage(writeMsg);
+        handler.sendMessage(writeMsg);
+    }
+
+    public void onClick(View view) {
     }
 
     private String getCurrentCoordinates() {

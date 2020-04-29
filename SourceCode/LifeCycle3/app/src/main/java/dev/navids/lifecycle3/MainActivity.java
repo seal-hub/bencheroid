@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity{
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         onClick_onStop.toString();

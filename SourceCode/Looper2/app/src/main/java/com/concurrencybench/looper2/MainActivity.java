@@ -52,7 +52,6 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 String latDiff = String.valueOf(Double.valueOf(coordinates.split(",")[0]) - Double.valueOf(getCurrentCoordinates().split(",")[0]));
-                String longDiff = String.valueOf(Double.valueOf(coordinates.split(",")[1]) - Double.valueOf(getCurrentCoordinates().split(",")[1]));
             }
         });
     }
