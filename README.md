@@ -1,24 +1,20 @@
-# Concurrency Benchmark
-## Entities 
-### External
-* Concurrency API
-	* Thread, Handler, AsyncTask, Executor, Timer, IntentService
-* Synchronization Mechanism
-	* Thread constructs, Looper, withDelay, AtFrontOfQueue, Serial, Parallel
-* Involved Components
-	* Activity, Service, Receiver
-* Android Callbacks
-	* LifeCycle (onCreate, onStart, ..., onDestroy), EventListener (onClick, onLocationChanged, etc.	)
-* Inter-Component Communication (ICC)
-	* 	Yes/No
+# A benchmark for event-race analysis in android apps
 
-### Internal
-* Input (Path), Execution Order, Thread, Time
-	* 	Yes/No
+*BenchERoid* is an open repository of (potential and actual) event-race bugs in Android apps.
 
+---
+We welcome your contributions!*
+------------------------------
+**You are most welcome to contribute additional event-race bugs to BenchERoid.** To do so, please fork the project, commit an appropriate Android Studio source project (in `SourceCode`) and APK (in `APKs`), update this README by adding a row to the end of [Benchmark App Info](https://github.com/seal-hub/bencheroid#benchmark-app-info) and then send us a pull request.
+
+\* adapted from [DroidBench](https://github.com/secure-software-engineering/DroidBench/)
+
+## Publication
+* Salehnamadi, N., Alshayban, A., Ahmed, I. and Malek, S., 2020, June. A benchmark for event-race analysis in android apps. In Proceedings of the 18th International Conference on Mobile Systems, Applications, and Services (pp. 466-467).
+---
 
 ## Benchmark App Info
-The locations of event races are represented as *[Event1, Event2, Field]* where Event1 and Event2 are defined as *FileName (Line Number)*. The more detailed list can be found in [this google sheet](https://docs.google.com/spreadsheets/d/1dj9SPCKxUDIGwRgBsUjtdBfitT8pcvSm8HbscgZeQTA/edit?usp=sharing).
+The locations of event races are represented as *[Event1, Event2, Field]* where Event1 and Event2 are defined as *FileName (Line Number)*. 
 
 |Id|Name| Concurrency API | Synchronization Mechanism | Involved Components | Android Callbacks | ICC | Internal Entities | #ER | ER Location(s)|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
